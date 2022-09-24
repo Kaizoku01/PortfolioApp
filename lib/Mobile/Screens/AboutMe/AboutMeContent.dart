@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolioapp/Mobile/Components/MyBullet.dart';
+// import 'package:portfolioapp/Mobile/Components/MyBullet.dart';
 
 class AboutMeContent extends StatelessWidget {
   AboutMeContent({Key? key}) : super(key: key);

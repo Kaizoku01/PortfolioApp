@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolioapp/Mobile/Components/BulletText.dart';
+import 'package:portfolioapp/Mobile/Components/UniversalConstants.dart';
 
 class FeatScreen extends StatelessWidget {
   const FeatScreen({Key? key}) : super(key: key);
@@ -12,12 +14,7 @@ class FeatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(featBgUrl),
-            fit: BoxFit.cover,
-          ),
-        ),
+        decoration: kScaffoldBackground,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -50,11 +47,90 @@ class FeatScreen extends StatelessWidget {
                           ],
                         ),
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.brown,
-                          onPrimary: Colors.white,
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.brown,
                         ),
                       ),
                     )
+                  ],
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 25, left: 35),
+                  child: Text(
+                    "Skills : ",
+                    style: GoogleFonts.ubuntu(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 60, top: 30),
+                      child: BulletText(
+                          text: 'C / C++',
+                          bulletRadius: 7,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          style: GoogleFonts.ubuntu(
+                              fontSize: 24, fontWeight: FontWeight.w500),
+                          bulletColor: Colors.black),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 180, top: 20),
+                      child: BulletText(
+                          text: 'Data Structure and\nAlgorithms',
+                          bulletRadius: 7,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          style: GoogleFonts.ubuntu(
+                              fontSize: 24, fontWeight: FontWeight.w500),
+                          bulletColor: Colors.black),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 60, top: 20),
+                      child: BulletText(
+                          text: 'Flutter / Dart',
+                          bulletRadius: 7,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          style: GoogleFonts.ubuntu(
+                              fontSize: 24, fontWeight: FontWeight.w500),
+                          bulletColor: Colors.black),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 180, top: 20),
+                      child: BulletText(
+                          text: 'MySql / Firebase',
+                          bulletRadius: 7,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          style: GoogleFonts.ubuntu(
+                              fontSize: 24, fontWeight: FontWeight.w500),
+                          bulletColor: Colors.black),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 60, top: 20),
+                      child: BulletText(
+                          text: 'Design Patterns and \n Principle',
+                          bulletRadius: 7,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          style: GoogleFonts.ubuntu(
+                              fontSize: 24, fontWeight: FontWeight.w500),
+                          bulletColor: Colors.black),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 180, top: 20),
+                      child: BulletText(
+                          text: 'Git / GitHub',
+                          bulletRadius: 7,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          style: GoogleFonts.ubuntu(
+                              fontSize: 24, fontWeight: FontWeight.w500),
+                          bulletColor: Colors.black),
+                    ),
                   ],
                 ),
               ),

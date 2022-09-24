@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolioapp/Mobile/Components/UniversalConstants.dart';
 import 'package:portfolioapp/Mobile/Screens/AboutMe/AboutMe.dart';
 import 'package:portfolioapp/Mobile/Screens/Feat/FeatScreen.dart';
 import 'package:portfolioapp/Mobile/Screens/MyApps/MyAppScreens.dart';
@@ -10,26 +11,27 @@ class AppDetailScreen extends StatelessWidget {
   final String appImageUrl = "assets/images/Group_5.jpg";
   final TextStyle appNameStyle = GoogleFonts.ubuntu(
       fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white);
+  final String desc =
+      "Lorem ipsum dolor sit \nametras dapibus\nfacilisis condibitasse platea dictumst. \nEtiam nisi dapibus. Vivamus variu";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/baymax.jpg"),
-          ),
-        ),
+        decoration: kScaffoldBackground,
         child: Stack(
           children: [
             Container(
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              color: Colors.black45,
+              color: Colors.black.withOpacity(0.35),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Center(
-                  child: Image.asset(appImageUrl, height: 100, width: 100),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Image.asset(appImageUrl, height: 100, width: 100),
+                  ),
                 ),
                 Text("Dice App", style: appNameStyle),
                 Padding(
@@ -41,7 +43,7 @@ class AppDetailScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Very amazing supremly satisfyung\nmazzza aaajaye\nkfhsfhsk\nfsjkgfkjds\nsdkjgfdsfjfkhsd\ndsflkjhshfklssd",
+                  desc,
                   style: GoogleFonts.roboto(fontSize: 20, color: Colors.white),
                 ),
                 Padding(
@@ -53,7 +55,7 @@ class AppDetailScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "github/linkyahaaayega",
+                  "github/link_to_be_added_here",
                   style: GoogleFonts.roboto(fontSize: 20, color: Colors.white),
                 ),
                 Padding(

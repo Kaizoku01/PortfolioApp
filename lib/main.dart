@@ -13,6 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.black,
+          unselectedLabelColor: Colors.black.withOpacity(0.5),
+          splashFactory: InkSparkle.splashFactory,
+        ),
+      ),
       builder: (context, child) => ResponsiveWrapper.builder(
         child,
         minWidth: 480,

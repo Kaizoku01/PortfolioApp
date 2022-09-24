@@ -4,3 +4,9 @@
 
 ///FutureGoals
 //todo: making a WebApp to edit data in this App.
+
+///Optimizations :
+//todo: AboutMeScreen is severly violating DRY principle!! Improve
+
+///Current Task
+//todo: Finish Drawer

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolioapp/Mobile/Components/UniversalConstants.dart';
 import 'package:portfolioapp/Mobile/Screens/MyApps/Components/AppTile.dart';
 
 class MyAppScreen extends StatelessWidget {
@@ -8,10 +9,14 @@ class MyAppScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/baymax.jpg"), fit: BoxFit.cover),
-        ),
+        width: double.infinity,
+        height: double.infinity,
+        decoration: kScaffoldBackground,
+        // decoration: BoxDecoration(
+        //   image: DecorationImage(
+        //       image: AssetImage("assets/images/baymax.jpg"), fit: BoxFit.cover),
+        // ),
+
         child: ListView.builder(
           padding: const EdgeInsets.all(8),
           itemCount: 2,

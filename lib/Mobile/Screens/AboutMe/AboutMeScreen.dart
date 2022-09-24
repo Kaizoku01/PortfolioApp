@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/parser.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolioapp/Mobile/Components/BulletText.dart';
+import 'package:portfolioapp/Mobile/Components/UniversalConstants.dart';
 
 class AboutMeScreen extends StatelessWidget {
   const AboutMeScreen({Key? key}) : super(key: key);
@@ -13,16 +14,7 @@ class AboutMeScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xff00416A),
-              Color(0xffE4E5E6),
-            ],
-          ),
-        ),
+        decoration: kScaffoldBackground,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -62,67 +54,90 @@ class AboutMeScreen extends StatelessWidget {
               ),
               Column(
                 children: [
-                  ListTile(
-                    leading: SvgPicture.asset(
-                      'assets/images/gcap.svg',
-                      height: 30,
-                      width: 30,
-                    ),
-                    title: Text(
-                      'Education :',
-                      style: GoogleFonts.ubuntu(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 20),
+                        child: SvgPicture.asset(
+                          'assets/images/gcap.svg',
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                      Text(
+                        'Education :',
+                        style: GoogleFonts.ubuntu(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
-                  BulletText(
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: BulletText(
                       text: 'Jaypee Institute Of Infomation Technology,\nNoida',
-                      bulletRadius: 5,
                       padding: EdgeInsets.only(left: 80, right: 20),
                       style: GoogleFonts.roboto(fontSize: 18),
-                      bulletColor: Colors.black),
-                  BulletText(
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: BulletText(
                       text: 'Bachelor\'s in Technology, CSE',
-                      bulletRadius: 5,
                       padding: EdgeInsets.only(left: 105, right: 20),
                       style: GoogleFonts.roboto(fontSize: 18),
-                      bulletColor: Colors.black),
-                  BulletText(
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: BulletText(
                       text: 'Graduation Year : 2024',
-                      bulletRadius: 5,
                       padding: EdgeInsets.only(left: 105, right: 20),
                       style: GoogleFonts.roboto(fontSize: 18),
-                      bulletColor: Colors.black),
-                  ListTile(
-                    leading: SvgPicture.asset(
-                      'assets/images/work.svg',
-                      height: 30,
-                      width: 30,
-                    ),
-                    title: Text(
-                      'Experience:',
-                      style: GoogleFonts.ubuntu(
-                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  BulletText(
-                    text: 'VYAM',
-                    bulletRadius: 5,
-                    padding: EdgeInsets.only(left: 80, right: 20),
-                    style: GoogleFonts.roboto(fontSize: 18),
-                    bulletColor: Colors.black,
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 20),
+                        child: SvgPicture.asset(
+                          'assets/images/work.svg',
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                      Text(
+                        'Experience:',
+                        style: GoogleFonts.ubuntu(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
-                  BulletText(
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: BulletText(
+                      text: 'VYAM',
+                      padding: EdgeInsets.only(left: 80, right: 20),
+                      style: GoogleFonts.roboto(fontSize: 18),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: BulletText(
                       text: 'Role : Flutter Developer Intern',
-                      bulletRadius: 5,
                       padding: EdgeInsets.only(left: 105, right: 20),
                       style: GoogleFonts.roboto(fontSize: 18),
-                      bulletColor: Colors.black),
-                  BulletText(
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: BulletText(
                       text: 'Duration : 1 month',
-                      bulletRadius: 5,
                       padding: EdgeInsets.only(left: 105, right: 20),
                       style: GoogleFonts.roboto(fontSize: 18),
-                      bulletColor: Colors.black),
+                    ),
+                  ),
                 ],
               ),
             ],

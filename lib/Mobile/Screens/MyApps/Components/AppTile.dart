@@ -9,7 +9,6 @@ class MyAppTile extends StatelessWidget {
   final String descriptionText = "Description: Basic 2D dice game.";
   final String appName = "Dice App";
   final String appImageUrl = "assets/images/Group_5.jpg";
-  final int counter = 1;
 
   final TextStyle descriptionStyle = GoogleFonts.roboto(
     fontSize: 18,
@@ -20,7 +19,15 @@ class MyAppTile extends StatelessWidget {
       GoogleFonts.ubuntu(fontSize: 32, fontWeight: FontWeight.bold);
 
   final BoxDecoration appTileCard = BoxDecoration(
-    color: Colors.white,
+    //color: Colors.white,
+    gradient: const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        Color(0xffACB6E5),
+        Color(0xff86FDE8),
+      ],
+    ),
     borderRadius: BorderRadius.circular(12),
     boxShadow: const [
       BoxShadow(
@@ -44,27 +51,21 @@ class MyAppTile extends StatelessWidget {
       },
       child: Container(
         margin: const EdgeInsets.all(20),
-        height: 170,
+        height: 200,
         width: 460,
         decoration: appTileCard,
         child: Stack(
           children: [
             Positioned(
-              left: 10,
+              left: 25,
               top: 20,
-              child: Text(
-                counter.toString() + ".",
-                style: GoogleFonts.roboto(
-                    fontSize: 22, fontWeight: FontWeight.w500),
+              child: GestureDetector(
+                child: Image.asset(appImageUrl, height: 70, width: 70),
+                onTap: () {},
               ),
             ),
             Positioned(
-              left: 40,
-              top: 20,
-              child: Image.asset(appImageUrl, height: 70, width: 70),
-            ),
-            Positioned(
-              left: 130,
+              left: 110,
               top: 20,
               child: Text(
                 appName,
@@ -72,19 +73,19 @@ class MyAppTile extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 135,
-              top: 58,
+              left: 110,
+              top: 65,
               child: Text(
                 descriptionText,
                 style: descriptionStyle,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(25.0),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
-                  width: 165,
+                  width: 200,
                   height: 45,
                   child: ElevatedButton(
                     onPressed: () {
@@ -96,17 +97,18 @@ class MyAppTile extends StatelessWidget {
                         const Icon(FontAwesomeIcons.download, size: 20),
                         Text(
                           "  Install",
-                          style: GoogleFonts.ubuntu(fontSize: 24),
+                          style: GoogleFonts.ubuntu(fontSize: 28),
                         ),
                       ],
                     ),
                     style: ElevatedButton.styleFrom(
-                        primary: const Color(0xff2BBB64),
-                        onPrimary: Colors.black),
+                      foregroundColor: Colors.black,
+                      backgroundColor: const Color(0xff2BBB64),
+                    ),
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
